@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频</title>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+}
+
+.shell {
+    width: 100%;
+    position: relative;
+    padding: 80px 0;
+    transition: 0.3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.shell:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 99, 99, 0.8);
+    content: "";
+}
+
+.header {
+    top: -80px;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 2px solid #30cec1a3;
+    align-items: center;
+    /* width: 100%; */
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.header h1 {
+    color: #30cec1a3;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header nav ul li {
+    margin: 0 10px;
+    padding: 0;
+}
+
+.header nav ul li a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.header nav ul li a:hover {
+    color: #10c4b5;
+}
+
+.title {
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.title a {
+    text-decoration: none;
+}
+.title h2{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 65px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.title h3 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    text-align: right;
+    letter-spacing: 5px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+}
+
+.timeline {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 700px;
+    position: relative;
+}
+
+.content-title {
+    font-weight: normal;
+    font-size: 66px;
+    margin: -10px 0 0 0;
+    transition: 0.4s;
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.content-desc {
+    margin: 0;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 25px;
+}
+
+.timeline:before {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.item {
+    padding: 40px 0;
+    opacity: 0.3;
+    filter: blur(2px);
+    transition: 0.5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+}
+
+.item:before {
+    content: attr(data-text);
+    letter-spacing: 3px;
+    width: 100%;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    top: 70%;
+    margin-top: -5px;
+    padding-left: 15px;
+    opacity: 0;
+    right: calc(-100% - 56px);
+    font: 900 20px '';
+    letter-spacing: 5px;
+}
+
+.item:nth-child(even) {
+    align-self: flex-end;
+}
+
+.item:nth-child(even):before {
+    right: auto;
+    text-align: right;
+    left: calc(-100% - 56px);
+    padding-left: 0;
+    border-left: none;
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    padding-right: 15px;
+}
+
+.item--active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
+
+.item--active:before {
+    top: 50%;
+    transition: 0.3s all 0.2s;
+    opacity: 1;
+}
+
+.item--active .content-title {
+    margin: -50px 0 20px 0;
+}
+
+.img {
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+.footer {
+    padding: 95px 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #999;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 767px) {
+    .item {
+        align-self: baseline !important;
+        width: 100%;
+        padding: 0 30px 150px 80px;
+    }
+
+    .item:before {
+        left: 10px !important;
+        padding: 0 !important;
+        top: 50px;
+        text-align: center !important;
+        width: 60px;
+        border: none !important;
+    }
+
+    .item:last-child {
+        padding-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .timeline:before {
+        left: 40px;
+    }
+}
+    </style>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+ }
+ img{
+     vertical-align: middle;
+ }
+ li{
+   list-style: none;
+ }
+ a{
+     color: #ccc;
+     text-decoration-line: none;
+ }
+
+.daohanglan{
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    background-color:rgba(0,0,0,.5);
+    z-index: 2;
+    transition: transform 0.5s ease-in-out;
+}
+.daohanglan .huadong{
+    position: absolute;
+    top: 0;
+    left: 346px;
+    width: 40px;
+    height: 5px;
+    background-color: rgb(105, 224, 255) ;    
+}
+
+.daohanglan .zuobian li{
+    float: left;
+}
+
+.daohanglan .zuobian h2 {
+    float: left;
+    display: inline-block;
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    height: 70px;
+    line-height: 75px;
+    margin: 0 30px;
+    color: #42acba;
+}
+
+.daohanglan .zuobian li a{
+    display: inline-block;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 30px;
+    color: #fff;
+    /* text-shadow: 0 0 10px #125f73, 0 0 20px #69e0ff, 0 0 40px #69e0ff; */
+}
+.daohanglan .zuobian li  :hover{
+    color: #69e0ff;
+    border-top: 5px solid #69e0ff;
+}
+
+.daohanglan .youbian li{
+    float: right;
+    height: 70px;
+    line-height: 70px;
+
+}li
+.daohanglan .youbian li span a{
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li i {
+    vertical-align: middle;
+    margin:0 15px;
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li nav{
+    display: inline-block;
+}
+.daohanglan .youbian li nav a{
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li footer{
+    display: inline-block;
+    font-size: 17px;
+    color: #ccc;
+    margin:0 15px;
+}
+.daohanglan .youbian li a:hover{
+    color: #fff;
+}
+    </style>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector(".daohanglan").style.top = "0";
+  } else {
+    document.querySelector(".daohanglan").style.top = "-70px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+    </script>
+</head>
+
+<body>
+    <div class="shell" id="shell">
+        <div class="daohanglan">
+            <ul class="zuobian">
+                <h2>异世交集</h2>
+                <li><a href="../首页/首页.html" target="">首&nbsp;页</a></li>
+                <li><a href="../资讯/资讯.html" target="">资&nbsp;讯</a></li>
+                <li><a href="../攻略/攻略.html" target="">攻&nbsp;略</a></li>
+                <li><a href="../视频/视频.html" target="">视&nbsp;频</a></li>
+                <li><a href="../关于我们/关于我们.html" target="">关&nbsp;于&nbsp;我&nbsp;们</a></li>
+            </ul>
+            <ul class="youbian">
+                <li>
+                    <span>
+                        <a href="../login/login.html" target="">退&nbsp;出</a>
+                    </span><i><img src=""
+                            alt=""></i>
+                        </li>
+            </ul>
+        </div>
+        <div class="title">
+            <h2>视&emsp;频</h2>
+            <a href="https://www.bilibili.com/">
+                <h3>————MORE TO BILIBILI</h3>
+            </a>
+        </div>
+        <div class="timeline">
+            <div class="item" data-text="《幻塔》&emsp;澄镜与过往，明景拟态PV发布">
+                <div class="content">
+                    <img src="./img/01.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.bilibili.com/video/BV1WP41197bo/?spm_id_from=333.337.search-card.all.click&vd_source=0d97a8c5375efae387030ac6cdf466f7" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;[那茶水第一次品尝或许稍有些苦涩，但是却能引发绵长的回味。]
+                            [在那之后我便成了这里的常客，饮茶的同时听来往的人们讲些事情，兴许能帮我找到什么人……]
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="item" data-text="《原神》&emsp;EP-谛思归悟之境">
+                <div class="content">
+                    <img src="./img/02.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.bilibili.com/video/BV1hh411T7WN/?spm_id_from=333.337.search-card.all.click&vd_source=0d97a8c5375efae387030ac6cdf466f7" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;静水般的生活，烈风般的生活。
+                            <br>
+                            &emsp;&emsp;白天是为了这些，而夜晚属于聆听、思辨与自我。
+                            <br>
+                            &emsp;&emsp;智慧之命运知晓每一粒微尘的一生。智慧准许人们讲述他们的故事，有如一粒微尘。
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="item" data-text="《崩坏：星穹铁道》&emsp;走近星穹——「银狼：宇宙第一天才骇客！」">
+                <div class="content">
+                    <img src="./img/03.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.bilibili.com/video/BV1gu4y1Z7cu/?spm_id_from=333.337.search-card.all.click&vd_source=0d97a8c5375efae387030ac6cdf466f7">
+                        <p class="content-desc">
+                        &emsp;&emsp;宇宙第一天才骇客银狼小姐向全银河喊话：有意愿与银狼对决的骇客诸君，请在任何时间、任何地点向银狼发起网络进攻，银狼愿意随时应战。
+                    </p></a>
+                </div>
+            </div>
+
+            <div class="item" data-text="《幻塔》&emsp;最强萌新入坑抽卡规划⚡混色抗性流VS纯色异能流⚡哪家强？">
+                <div class="content">
+                    <img src="./img/04.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.bilibili.com/video/BV1yM4y1J7Ma/?spm_id_from=333.337.search-card.all.click&vd_source=0d97a8c5375efae387030ac6cdf466f7" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;组队玩法坦克虽被调侃无用，但还是能够轻松混满奖励！
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="item" data-text="《幻塔》&emsp;萌新讲堂第四讲：源器介绍与战斗机制">
+                <div class="content">
+                    <img src="./img/05.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.bilibili.com/video/BV1Mt4y1c7DY/?spm_id_from=333.788&vd_source=0d97a8c5375efae387030ac6cdf466f7" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;一般战斗中，输出的一号位源器必带骰子，考恩特，考恩特二星，其中之一，二号位首选五星的原能护盾，没有就推荐低星可用的全息投影，三星时空裂缝，三星无人机等等，在新手初期伤害不高的情况下，二号位可以选择飞弹，或者不稳定的磁力风暴。                  
+                        </p>
+                    </a>                   
+                </div>
+            </div>
+
+            <div class="item" data-text="《战双帕弥什》&emsp;机体介绍:「亚里莎·回音」| 恪守正理，罪灭虚妄">
+                <div class="content">
+                    <img src="./img/06.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.bilibili.com/video/BV1214y1D73g/?spm_id_from=333.337.search-card.all.click&vd_source=0d97a8c5375efae387030ac6cdf466f7" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;泥沼中成长的生命，一朝发现真实的污秽。
+                            ——崩塌的规则之下，继承意志的审判者，新机体「亚里莎·回音」登场！
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="item" data-text="《崩坏3》&emsp;「在海的指尖」——希儿「死生之律者」角色预告">
+                <div class="content">
+                    <img src="./img/07.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.bilibili.com/video/BV1c14y1D7om/?spm_id_from=333.337.search-card.all.click&vd_source=0d97a8c5375efae387030ac6cdf466f7" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;“泡沫浮上水面，怒放于金色的晨曦；
+                            <br>
+                            &emsp;&emsp;蝴蝶飞跃深海，栖留在纤柔的指尖。
+                            <br>
+                            &emsp;&emsp;自「海」中诞生的她，虽将独自前行，但那跨越了「死生」之境的灵魂，已无惧于悄然滋长的「恶芽」。
+                            <br>
+                            &emsp;&emsp;「海中的魂灵，请聆听生命的旋律！」”
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="item" data-text="《重返未来：1999》&emsp;衣着PV：绿茵的盛典 Carnival on the Pitch">
+                <div class="content">
+                    <img src="./img/08.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.bilibili.com/video/BV1Hh4y1V782/?spm_id_from=333.337.search-card.all.click&vd_source=0d97a8c5375efae387030ac6cdf466f7" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;明星嘉宾绶带飞舞，足球海盗与躁动绅士齐为胜利欢呼。
+                            <br>
+                            &emsp;&emsp;绿茵场上人潮汹涌，他们与雷米特杯一同万众瞩目。
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- <div class="item" data-text="&emsp;">
+                <div class="content">
+                    <img src="./img/08.jpg" style="opacity: 0;" alt="" class="img">
+                    <h2 class="content-title"></h2>
+                    <a href="https://www.miyoushe.com/ys/article/40354504" target="_blank">
+                        <p class="content-desc">
+                    </a>
+                </div>
+            </div> -->
+        </div>
+        <div class="footer">
+            <h3>&copy;异世交集。版权所有。</h3>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        (function ($) {
+    $.fn.timeline = function () {
+        var selectors = {
+            id: $(this),
+            item: $(this).find(".item"),
+            activeClass: "item--active",
+            img: ".img"
+        };
+        // 将第一个时间轴项目激活，并设置时间轴背景图片为第一个项目的图片
+        selectors.item.eq(0).addClass(selectors.activeClass);
+        selectors.id.css(
+            "background-image",
+            "url(" +
+            selectors.item.first()
+                .find(selectors.img)
+                .attr("src") +
+            ")"
+        );
+        // 获取时间轴项目的总数
+        var itemLength = selectors.item.length;
+        // 当页面滚动时，触发滚动事件
+        $(window).scroll(function () {
+            var max, min;
+            // 获取页面滚动的距离
+            var pos = $(this).scrollTop();
+            selectors.item.each(function (i) {
+                // 获取当前时间轴项目的最小和最大高度
+                min = $(this).offset().top;
+                max = $(this).height() + $(this).offset().top;
+                var that = $(this);
+                // 如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                // 则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目的图片
+                if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                    selectors.item.removeClass(selectors.activeClass);
+                    selectors.id.css(
+                        "background-image",
+                        "url(" +
+                        selectors.item.last()
+                            .find(selectors.img)
+                            .attr("src") +
+                        ")"
+                    );
+                    selectors.item.last().addClass(selectors.activeClass);
+                }
+                // 如果当前滚动位置在当前项目的最小和最大高度之间，
+                // 则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                else if (pos <= max - 10 && pos >= min) {
+                    selectors.id.css(
+                        "background-image",
+                        "url(" +
+                        $(this)
+                            .find(selectors.img)
+                            .attr("src") +
+                        ")"
+                    );
+                    selectors.item.removeClass(selectors.activeClass);
+                    $(this).addClass(selectors.activeClass);
+                }
+            });
+        });
+    };
+})(jQuery)
+/*
+最后，我们调用 timeline 插件并传入时间轴的 ID 作为参数。
+这将启用时间轴插件并为该时间轴绑定滚动事件。
+*/
+$("#shell").timeline();
+
+
+    </script>
+</body>
+
+</html>
