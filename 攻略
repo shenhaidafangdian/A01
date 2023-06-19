@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>攻略</title>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+}
+
+.shell {
+    width: 100%;
+    position: relative;
+    padding: 80px 0;
+    transition: 0.3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.shell:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 99, 99, 0.8);
+    content: "";
+}
+
+.header {
+    top: -80px;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 2px solid #30cec1a3;
+    align-items: center;
+    /* width: 100%; */
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.header h1 {
+    color: #30cec1a3;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header nav ul li {
+    margin: 0 10px;
+    padding: 0;
+}
+
+.header nav ul li a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.header nav ul li a:hover {
+    color: #10c4b5;
+}
+
+.title {
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.title a {
+    text-decoration: none;
+}
+.title h2{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 65px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.title h3 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    text-align: right;
+    letter-spacing: 5px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+}
+
+.timeline {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 700px;
+    position: relative;
+}
+
+.content-title {
+    font-weight: normal;
+    font-size: 66px;
+    margin: -10px 0 0 0;
+    transition: 0.4s;
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: #7d7e80;
+}
+
+.content-desc {
+    margin: 0;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 25px;
+}
+
+.timeline:before {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.item {
+    padding: 40px 0;
+    opacity: 0.3;
+    filter: blur(2px);
+    transition: 0.5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+}
+
+.item:before {
+    content: attr(data-text);
+    letter-spacing: 3px;
+    width: 100%;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    top: 70%;
+    margin-top: -5px;
+    padding-left: 15px;
+    opacity: 0;
+    right: calc(-100% - 56px);
+    font: 900 20px '';
+    letter-spacing: 5px;
+}
+
+.item:nth-child(even) {
+    align-self: flex-end;
+}
+
+.item:nth-child(even):before {
+    right: auto;
+    text-align: right;
+    left: calc(-100% - 56px);
+    padding-left: 0;
+    border-left: none;
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    padding-right: 15px;
+}
+
+.item--active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
+
+.item--active:before {
+    top: 50%;
+    transition: 0.3s all 0.2s;
+    opacity: 1;
+}
+
+.item--active .content-title {
+    margin: -50px 0 20px 0;
+}
+
+.img {
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+.footer {
+    padding: 95px 0;
+    text-align: center;
+}
+
+.footer h3 {
+    color: #999;
+    display: inline-block;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .item {
+        align-self: baseline !important;
+        width: 100%;
+        padding: 0 30px 150px 80px;
+    }
+
+    .item:before {
+        left: 10px !important;
+        padding: 0 !important;
+        top: 50px;
+        text-align: center !important;
+        width: 60px;
+        border: none !important;
+    }
+
+    .item:last-child {
+        padding-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .timeline:before {
+        left: 40px;
+    }
+}
+    </style>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+ }
+ img{
+     vertical-align: middle;
+ }
+ li{
+   list-style: none;
+ }
+ a{
+     color: #ccc;
+     text-decoration-line: none;
+ }
+
+.daohanglan{
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    background-color:rgba(0,0,0,.5);
+    z-index: 2;
+    transition: transform 0.5s ease-in-out;
+}
+.daohanglan .huadong{
+    position: absolute;
+    top: 0;
+    left: 346px;
+    width: 40px;
+    height: 5px;
+    background-color: rgb(105, 224, 255) ;    
+}
+
+.daohanglan .zuobian li{
+    float: left;
+}
+
+.daohanglan .zuobian h2 {
+    float: left;
+    display: inline-block;
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    height: 70px;
+    line-height: 75px;
+    margin: 0 30px;
+    color: #42acba;
+}
+
+.daohanglan .zuobian li a{
+    display: inline-block;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 30px;
+    color: #fff;
+    /* text-shadow: 0 0 10px #125f73, 0 0 20px #69e0ff, 0 0 40px #69e0ff; */
+}
+.daohanglan .zuobian li  :hover{
+    color: #69e0ff;
+    border-top: 5px solid #69e0ff;
+}
+
+.daohanglan .youbian li{
+    float: right;
+    height: 70px;
+    line-height: 70px;
+
+}li
+.daohanglan .youbian li span a{
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li i {
+    vertical-align: middle;
+    margin:0 15px;
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li nav{
+    display: inline-block;
+}
+.daohanglan .youbian li nav a{
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li footer{
+    display: inline-block;
+    font-size: 17px;
+    color: #ccc;
+    margin:0 15px;
+}
+.daohanglan .youbian li a:hover{
+    color: #fff;
+}
+    </style>
+    <script>(function ($) {
+        $.fn.timeline = function () {
+            var selectors = {
+                id: $(this),
+                item: $(this).find(".item"),
+                activeClass: "item--active",
+                img: ".img"
+            };
+            // 将第一个时间轴项目激活，并设置时间轴背景图片为第一个项目的图片
+            selectors.item.eq(0).addClass(selectors.activeClass);
+            selectors.id.css(
+                "background-image",
+                "url(" +
+                selectors.item.first()
+                    .find(selectors.img)
+                    .attr("src") +
+                ")"
+            );
+            // 获取时间轴项目的总数
+            var itemLength = selectors.item.length;
+            // 当页面滚动时，触发滚动事件
+            $(window).scroll(function () {
+                var max, min;
+                // 获取页面滚动的距离
+                var pos = $(this).scrollTop();
+                selectors.item.each(function (i) {
+                    // 获取当前时间轴项目的最小和最大高度
+                    min = $(this).offset().top;
+                    max = $(this).height() + $(this).offset().top;
+                    var that = $(this);
+                    // 如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                    // 则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目的图片
+                    if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                        selectors.item.removeClass(selectors.activeClass);
+                        selectors.id.css(
+                            "background-image",
+                            "url(" +
+                            selectors.item.last()
+                                .find(selectors.img)
+                                .attr("src") +
+                            ")"
+                        );
+                        selectors.item.last().addClass(selectors.activeClass);
+                    }
+                    // 如果当前滚动位置在当前项目的最小和最大高度之间，
+                    // 则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                    else if (pos <= max - 10 && pos >= min) {
+                        selectors.id.css(
+                            "background-image",
+                            "url(" +
+                            $(this)
+                                .find(selectors.img)
+                                .attr("src") +
+                            ")"
+                        );
+                        selectors.item.removeClass(selectors.activeClass);
+                        $(this).addClass(selectors.activeClass);
+                    }
+                });
+            });
+        };
+    })(jQuery)
+    /*
+    最后，我们调用 timeline 插件并传入时间轴的 ID 作为参数。
+    这将启用时间轴插件并为该时间轴绑定滚动事件。
+    */
+    $("#shell").timeline();
+    
+    </script>
+</head>
+
+<body>
+    <div class="shell" id="shell">
+        <div class="daohanglan">
+            <ul class="zuobian">
+                <h2>异世交集</h2>
+                <li><a href="../首页/首页.html" target="">首&nbsp;页</a></li>
+                <li><a href="../资讯/资讯.html" target="">资&nbsp;讯</a></li>
+                <li><a href="../攻略/攻略.html" target="">攻&nbsp;略</a></li>
+                <li><a href="../视频/视频.html" target="">视&nbsp;频</a></li>
+                <li><a href="../关于我们/关于我们.html" target="">关&nbsp;于&nbsp;我&nbsp;们</a></li>
+            </ul>
+            <ul class="youbian">
+                <li>
+                    <span>
+                        <a href="../login/login.html" target="">退&nbsp;出</a>
+                    </span><i><img src=""
+                            alt=""></i>
+                        </li>
+            </ul>
+        </div>
+        <div class="title">
+            <h2>攻&emsp;略</h2>
+            <a href="https://www.miyoushe.com/" target="_blank">
+                <h3>————MORE TO MIYOUSHE</h3>
+            </a>
+			<a href="https://douliu.wanmei.com/" target="_blank">
+                <h3>————MORE TO WANMEI</h3>
+            </a>
+        </div>
+        <div class="timeline">
+            <div class="item" data-text="《原神》&emsp;截止3.7版本，全成就汇总">
+                <div class="content">
+                    <img src="./img/01.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.miyoushe.com/ys/article/40386981" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;大家好呀，这里是祈鸢，这篇内容汇总一下截止到3.7版本，全部的成就，等到4.0新国家的到来，成就估计又要加很多了
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="item" data-text="《原神》&emsp;【V3.7攻略·角色攻略】艾尔海森详细培养+主流阵容推荐">
+                <div class="content">
+                    <img src="./img/02.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.miyoushe.com/ys/article/40264251" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;大家好，我是一个志立于做简单易懂的一图流+细节攻略的up主，有问题错误可以评论区提出我基本每个都会解答，下面是正式介绍。
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="item" data-text="《崩坏：星穹铁道》&emsp;【1.1版本考据】星食考据·仙舟『罗浮』">
+                <div class="content">
+                    <img src="./img/03.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <p class="content-desc">
+                        &emsp;&emsp;本期为大家带来的是仙舟『罗浮』——蓝色&紫色品质的星食考据，闲话不多说，快跟卤煮一起来看看吧！
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《幻塔》&emsp;明景物理队输出手法，操作简单爆发高！">
+                <div class="content">
+                    <img src="./img/04.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://douliu.wanmei.com/article-detail.html?aid=1579433" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;幻塔新版本已经更新一周了，各位物理系的小伙伴入手咱大舅哥明景了吗？明景能C能辅，机制独特，但是想要打出超高爆发还是需要一定技巧的，那么今天我们就一起来看看明景在纯物理队中应该怎么操作吧！
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="item" data-text="《未定事件薄》&emsp;「鱼龙戏礼」限时活动丨龙舟竞逐，粽意飘香">
+                <div class="content">
+                    <img src="./img/05.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.miyoushe.com/wd/article/40320825" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;龙舟竞逐，粽意飘香。
+                            2023年6月16日11:00，「鱼龙戏礼」限时活动即将开启！                        
+                        </p>
+                    </a>                   
+                </div>
+            </div>
+
+            <div class="item" data-text="《崩坏3》&emsp;【蓝贴】新角色情报丨「死生之律者」、人偶「重装小兔」即将登场">
+                <div class="content">
+                    <img src="./img/06.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.miyoushe.com/bh3/article/40381534" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;舰长好，在即将到来的6.8版本「生死娑婆」中，希儿S级律者角色「死生之律者」即将登场，为舰长带来最新情报，请一起来看看吧！
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="item" data-text="《崩坏：星穹铁道》&emsp;【星穹中心】星铁成就梗百科第二期">
+                <div class="content">
+                    <img src="./img/07.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.miyoushe.com/sr/article/40377050" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;星铁成就梗百科第二期，本系列将会陆续更新《崩坏：星穹铁道》中的成就相关知识，那么进入正题。
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="item" data-text="《原神》&emsp;艾尔海森 | 材料采集、配队配装 攻略合集">
+                <div class="content">
+                    <img src="./img/08.jpg" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.miyoushe.com/ys/article/40354504" target="_blank">
+                        <p class="content-desc">
+                            &emsp;&emsp;hello，各位旅行者大家好呀~ 这里是攻略推荐bot！本期为大家带来艾尔海森攻略合集。
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- <div class="item" data-text="《原神》&emsp;艾尔海森 | 材料采集、配队配装 攻略合集">
+                <div class="content">
+                    <img src="./img/08.jpg" style="opacity: 0;" alt="" class="img">
+                    <h2 class="content-title">2023</h2>
+                    <a href="https://www.miyoushe.com/ys/article/40354504" target="_blank">
+                        <p class="content-desc">
+                    </a>
+                </div>
+            </div> -->
+        </div>
+        <div class="footer">
+            <h3>&copy;异世交集。版权所有。</h3>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        (function ($) {
+    $.fn.timeline = function () {
+        var selectors = {
+            id: $(this),
+            item: $(this).find(".item"),
+            activeClass: "item--active",
+            img: ".img"
+        };
+        // 将第一个时间轴项目激活，并设置时间轴背景图片为第一个项目的图片
+        selectors.item.eq(0).addClass(selectors.activeClass);
+        selectors.id.css(
+            "background-image",
+            "url(" +
+            selectors.item.first()
+                .find(selectors.img)
+                .attr("src") +
+            ")"
+        );
+        // 获取时间轴项目的总数
+        var itemLength = selectors.item.length;
+        // 当页面滚动时，触发滚动事件
+        $(window).scroll(function () {
+            var max, min;
+            // 获取页面滚动的距离
+            var pos = $(this).scrollTop();
+            selectors.item.each(function (i) {
+                // 获取当前时间轴项目的最小和最大高度
+                min = $(this).offset().top;
+                max = $(this).height() + $(this).offset().top;
+                var that = $(this);
+                // 如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                // 则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目的图片
+                if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                    selectors.item.removeClass(selectors.activeClass);
+                    selectors.id.css(
+                        "background-image",
+                        "url(" +
+                        selectors.item.last()
+                            .find(selectors.img)
+                            .attr("src") +
+                        ")"
+                    );
+                    selectors.item.last().addClass(selectors.activeClass);
+                }
+                // 如果当前滚动位置在当前项目的最小和最大高度之间，
+                // 则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                else if (pos <= max - 10 && pos >= min) {
+                    selectors.id.css(
+                        "background-image",
+                        "url(" +
+                        $(this)
+                            .find(selectors.img)
+                            .attr("src") +
+                        ")"
+                    );
+                    selectors.item.removeClass(selectors.activeClass);
+                    $(this).addClass(selectors.activeClass);
+                }
+            });
+        });
+    };
+})(jQuery)
+/*
+最后，我们调用 timeline 插件并传入时间轴的 ID 作为参数。
+这将启用时间轴插件并为该时间轴绑定滚动事件。
+*/
+$("#shell").timeline();
+
+
+    </script>
+</body>
+
+</html>
