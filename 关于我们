@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>关于我们</title>
+    <style>
+        *{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* 200%窗口高度（两屏窗口的高度） */
+    height: 200vh;
+}
+.bg{
+    /* 背景图片 */
+    background-image: url("./img/03.jpg");
+    /* 对图片进行剪切，保留原始比例 */
+    background-size: cover;
+    /* 设置背景图片的定位 */
+    background-position: 50% 50%;
+    height: 200vh;
+    font-size: 650px;
+    font-weight: 900;
+    text-align: center;
+    /* 相对定位 */
+    position: relative;
+    /* 以区块内的文字作为裁剪区域向外裁剪，文字的背景即为区块的背景，文字之外的区域都将被裁剪掉 */
+    -webkit-background-clip: text;
+    /* 将文字透明镂空 */
+    -webkit-text-fill-color: transparent;
+    overflow: hidden;
+    padding-top: 100px;
+}
+.bg::before{
+    content: "";
+    /* 背景图片继承父元素 */
+    background-image: inherit;
+    background-size: cover;
+    background-position: 50% 50%;
+    /* 绝对定位 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -99;
+}
+
+h1{
+    position: absolute;
+    top: 40vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    color: #fff;
+    letter-spacing: 10px;
+    padding: 100px 0;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+}
+
+h3{
+    position: absolute;
+    top: 145vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    color: #fff;
+    letter-spacing: 10px;
+    padding: 100px 0;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+}
+    </style>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+ }
+ img{
+     vertical-align: middle;
+ }
+ li{
+   list-style: none;
+ }
+ a{
+     color: #ccc;
+     text-decoration-line: none;
+ }
+
+.daohanglan{
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    background-color:rgba(0,0,0,.5);
+    z-index: 2;
+    transition: transform 0.5s ease-in-out;
+}
+.daohanglan .huadong{
+    position: absolute;
+    top: 0;
+    left: 346px;
+    width: 40px;
+    height: 5px;
+    background-color: rgb(105, 224, 255) ;    
+}
+
+.daohanglan .zuobian li{
+    float: left;
+}
+
+.daohanglan .zuobian h2 {
+    float: left;
+    display: inline-block;
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    height: 70px;
+    line-height: 75px;
+    margin: 0 30px;
+    color: #42acba;
+}
+
+.daohanglan .zuobian li a{
+    display: inline-block;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 30px;
+    color: #fff;
+    /* text-shadow: 0 0 10px #125f73, 0 0 20px #69e0ff, 0 0 40px #69e0ff; */
+}
+.daohanglan .zuobian li  :hover{
+    color: #69e0ff;
+    border-top: 5px solid #69e0ff;
+}
+
+.daohanglan .youbian li{
+    float: right;
+    height: 70px;
+    line-height: 70px;
+
+}li
+.daohanglan .youbian li span a{
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li i {
+    vertical-align: middle;
+    margin:0 15px;
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li nav{
+    display: inline-block;
+}
+.daohanglan .youbian li nav a{
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li footer{
+    display: inline-block;
+    font-size: 17px;
+    color: #ccc;
+    margin:0 15px;
+}
+.daohanglan .youbian li a:hover{
+    color: #fff;
+}
+    </style>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector(".daohanglan").style.top = "0";
+  } else {
+    document.querySelector(".daohanglan").style.top = "-70px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+    </script>
+</head>
+
+<body>
+    <div class="daohanglan">
+        <ul class="zuobian">
+            <h2>异世交集</h2>
+            <li><a href="../首页/首页.html" target="">首&nbsp;页</a></li>
+            <li><a href="../资讯/资讯.html" target="">资&nbsp;讯</a></li>
+            <li><a href="../攻略/攻略.html" target="">攻&nbsp;略</a></li>
+            <li><a href="../视频/视频.html" target="">视&nbsp;频</a></li>
+            <li><a href="../关于我们/关于我们.html" target="">关&nbsp;于&nbsp;我&nbsp;们</a></li>
+        </ul>
+        <ul class="youbian">
+            <li>
+                <span>
+                    <a href="../login/login.html" target="">退&nbsp;出</a>
+                </span><i><img src=""
+                        alt=""></i>
+                    </li>
+        </ul>
+    </div>
+    <div class="bg">
+        <span>谢谢</span>
+    </div>
+    <h3>
+        制作人：罗健
+    </h3>
+    <h1>感谢鉴赏！<br> <br>—— "异世交集"</h1>
+    <script type="text/javascript">
+        // 获取背景对象
+        const bg=document.querySelector(".bg");
+        // 监听滚轮事件
+        document.addEventListener("scroll",function(){
+            // 获取当前滚轮的位置
+            const scrollY=window.scrollY;
+            if(scrollY!=0){
+                // 滚轮位置不等于0时,修改背景的定位加上滚轮的值
+                bg.style.backgroundPosition="calc(50% + "+scrollY+"px) calc(50% + "+scrollY+"px)";
+            }else{
+                // 否则清空背景的定位
+                bg.style.backgroundPosition="";
+            }
+        })
+    </script>
+</body>
+
+</html>
