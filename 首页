@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>首页</title>
+    <style>
+        /* 设置页面背景 */
+        body {
+            background-image: url("./imgs/背景图.jpg");
+            background-size: no-repeat;
+            background-size: contain;
+            animation: animateBackground 60s linear infinite;
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        /* 设置h1标题框及字体样式 */
+        /* header {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 2px solid #10c4b5;
+    align-items: center;
+} */
+        /* header h1 {
+    color: #10c4b5;
+    font-size: 24px;
+    font-weight: bold;
+} */
+        /* 设置导航样式 */
+        /* nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li {
+    margin: 0 10px;
+    padding: 0;
+}
+nav ul li a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    transition: all .3s;
+}
+nav ul li a:hover {
+    color: #10c4b5;
+} */
+        /* 设置intro板块的样式 */
+        .intro {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding: 100px;
+            border-bottom: 2px solid #10c4b5;
+        }
+
+        .intro h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0 0 20px;
+        }
+
+        /* button的样式 */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            border: 2px solid #10c4b5;
+            color: #10c4b5;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #10c4b5;
+            color: #fff;
+        }
+
+        /* featured板块的样式 */
+        .featured {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            padding: 60px;
+            color: #fff;
+        }
+
+        /* game-card的样式 */
+        .game-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 400px;
+            height: 800px;
+            margin: 20px;
+        }
+
+        .game-card img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            filter: grayscale(40%);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: all .3s;
+        }
+
+        .game-card img:hover {
+            filter: grayscale(0%);
+            transition: all .3s;
+        }
+
+        .game-card h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0 10px;
+        }
+
+        .game-card div {
+            font-size: 16px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* recent板块的样式 */
+        .recent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            color: #fff;
+        }
+
+        .recent h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .recent ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .recent ul li {
+            margin: 10px 0;
+        }
+
+        .recent ul li a {
+            font-size: 24px;
+            color: #10c4b5;
+        }
+
+        /* footer的样式 */
+        footer {
+            padding: 20px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .h2 {
+            padding: 1px;
+            text-align: center;
+            color: #fff;
+            font-size: 32px;
+        }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: #ccc;
+            text-decoration-line: none;
+        }
+
+        .daohanglan {
+            position: fixed;
+            top: 0;
+            height: 70px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            z-index: 2;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .daohanglan .huadong {
+            position: absolute;
+            top: 0;
+            left: 346px;
+            width: 40px;
+            height: 5px;
+            background-color: rgb(105, 224, 255);
+        }
+
+        .daohanglan .zuobian li {
+            float: left;
+        }
+
+        .daohanglan .zuobian h2 {
+            float: left;
+            display: inline-block;
+            font-size: 36px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            height: 70px;
+            line-height: 75px;
+            margin: 0 30px;
+            color: #42acba;
+        }
+
+        .daohanglan .zuobian li a {
+            display: inline-block;
+            height: 70px;
+            line-height: 70px;
+            margin: 0 30px;
+            color: #fff;
+            /* text-shadow: 0 0 10px #125f73, 0 0 20px #69e0ff, 0 0 40px #69e0ff; */
+        }
+
+        .daohanglan .zuobian li :hover {
+            color: #69e0ff;
+            border-top: 5px solid #69e0ff;
+        }
+
+        .daohanglan .youbian li {
+            float: right;
+            height: 70px;
+            line-height: 70px;
+
+        }
+
+        li .daohanglan .youbian li span a {
+            font-size: 17px;
+            color: #ccc;
+        }
+
+        .daohanglan .youbian li i {
+            vertical-align: middle;
+            margin: 0 15px;
+            font-size: 17px;
+            color: #ccc;
+        }
+
+        .daohanglan .youbian li nav {
+            display: inline-block;
+        }
+
+        .daohanglan .youbian li nav a {
+            font-size: 17px;
+            color: #ccc;
+        }
+
+        .daohanglan .youbian li footer {
+            display: inline-block;
+            font-size: 17px;
+            color: #ccc;
+            margin: 0 15px;
+        }
+
+        .daohanglan .youbian li a:hover {
+            color: #fff;
+        }
+    </style>
+    <script>
+        (function ($) {
+            $.fn.timeline = function () {
+                var selectors = {
+                    id: $(this),
+                    item: $(this).find(".item"),
+                    activeClass: "item--active",
+                    img: ".img"
+                };
+                // 将第一个时间轴项目激活，并设置时间轴背景图片为第一个项目的图片
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                    "background-image",
+                    "url(" +
+                    selectors.item.first()
+                        .find(selectors.img)
+                        .attr("src") +
+                    ")"
+                );
+                // 获取时间轴项目的总数
+                var itemLength = selectors.item.length;
+                // 当页面滚动时，触发滚动事件
+                $(window).scroll(function () {
+                    var max, min;
+                    // 获取页面滚动的距离
+                    var pos = $(this).scrollTop();
+                    selectors.item.each(function (i) {
+                        // 获取当前时间轴项目的最小和最大高度
+                        min = $(this).offset().top;
+                        max = $(this).height() + $(this).offset().top;
+                        var that = $(this);
+                        // 如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                        // 则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目的图片
+                        if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                            selectors.item.removeClass(selectors.activeClass);
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                selectors.item.last()
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.last().addClass(selectors.activeClass);
+                        }
+                        // 如果当前滚动位置在当前项目的最小和最大高度之间，
+                        // 则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                        else if (pos <= max - 10 && pos >= min) {
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                $(this)
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.removeClass(selectors.activeClass);
+                            $(this).addClass(selectors.activeClass);
+                        }
+                    });
+                });
+            };
+        })(jQuery)
+        /*
+        最后，我们调用 timeline 插件并传入时间轴的 ID 作为参数。
+        这将启用时间轴插件并为该时间轴绑定滚动事件。
+        */
+        $("#shell").timeline();
+
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="daohanglan">
+            <ul class="zuobian">
+                <h2>异世交集</h2>
+                <li><a href="../首页/首页.html" target="">首&nbsp;页</a></li>
+                <li><a href="../资讯/资讯.html" target="">资&nbsp;讯</a></li>
+                <li><a href="../攻略/攻略.html" target="">攻&nbsp;略</a></li>
+                <li><a href="../视频/视频.html" target="">视&nbsp;频</a></li>
+                <li><a href="../关于我们/关于我们.html" target="">关&nbsp;于&nbsp;我&nbsp;们</a></li>
+            </ul>
+            <ul class="youbian">
+                <li>
+                    <span>
+                        <a href="../login/login.html" target="">退&nbsp;出</a>
+                    </span><i><img src="" alt=""></i>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="intro">
+            <h2>欢迎来到异世交集！</h2>
+            <p>&emsp;&emsp;欢迎光临《异世交集》！我们是一家致力于为您提供最高品质的二次元开放性游戏资讯的网站。在这里，您将能够探索最新、最独特的游戏世界，并了解行业内最新的动态。我们的编辑团队是由一群资深的游戏专家和狂热的游戏爱好者组成的，经过严格的筛选和培训，他们精通各种游戏类型，可以为您提供最专业、深入的游戏评测、攻略、活动赛事报道、游戏社区交流和游戏产品推介。<br>
+
+                &emsp;&emsp;《异世交集》由志在打造行业无二的二次元开放性游戏资讯平台，我们坚信，我们的专业、高效的服务能够为广大游戏爱好者带来 unparalleled and unique
+                的游戏体验。我们不仅提供最丰富、最新鲜的游戏资讯，还为您提供高质量的视觉、音频和互动体验，让您置身于一个真实而引人入胜的游戏世界中。无论您是新手还是游戏老手，我们的平台都能够为您量身定制最优的游戏选择。<br>
+
+                &emsp;&emsp;在这里，您将享受到独一无二的游戏体验，欢迎来到《异世交集》，与我们一起探寻一个充满奇迹和不可思议的奇幻游戏世界吧！</p>
+            <a href="../资讯/资讯.html" class="button">立即加入！！！</a>
+        </section>
+        <section class="h2">
+            <h2>热门游戏</h2>
+        </section>
+        <section class="featured">
+            <div class="game-card">
+                <img src="./imgs/原神_1.jpg" alt="原神">
+                <h3>原神</h3>
+                <div>
+                    &emsp;&emsp;《原神》是由上海米哈游网络科技股份有限公司制作发行的一款开放世界冒险游戏，于2017年1月底立项，原初测试于2019年6月21日开启，再临测试于2020年3月19日开启，启程测试于2020年6月11日开启，PC版技术性开放测试于9月15日开启，公测于2020年9月28日开启。
+                </div>
+                <div>
+                    &emsp;&emsp;游戏发生在一个被称作“提瓦特”的幻想世界，在这里，被神选中的人将被授予“神之眼”，导引元素之力。玩家将扮演一位名为“旅行者”的神秘角色，在自由的旅行中邂逅性格各异、能力独特的同伴们，和他们一起击败强敌，找回失散的亲人——同时，逐步发掘“原神”的真相
+                </div>
+                <br>
+                <a href="https://ys.mihoyo.com/main/" class="button" target="_blank">Learn More</a>
+            </div>
+
+            <div class="game-card">
+                <img src="./imgs/幻塔_1.jpg" alt="幻塔">
+                <h3>幻塔</h3>
+                <div>
+                    &emsp;&emsp;《幻塔》是完美世界游戏旗下HottaStudio自主研发的轻科幻开放世界手游，融合高自由度探索玩法，爽快战斗系统，多样互动解谜以及丰富角色塑造，为你讲述有关拯救与毁灭的末世故事。虚幻引擎4.26打造无缝艾达星，动作捕捉系统赋予角色真实动态，物理引擎形成多样场景交互解谜，低门槛、高深度、无职业束缚的动作系统打造爽快战斗，一起带上幻想去冒险！
+                </div>
+                <br>
+                <a href="https://ht.wanmei.com/main.html" class="button" target="_blank">Learn More</a>
+            </div>
+
+            <div class="game-card">
+                <img src="./imgs/崩坏：星穹铁道_1.jpg" alt="崩坏：星穹铁道">
+                <h3>崩坏：星穹铁道</h3>
+                <div>
+                    &emsp;&emsp;《崩坏：星穹铁道》是上海米哈游网络科技股份有限公司自研的银河冒险策略游戏。游戏于2021年10月27日-2021年11月1日开启“始发测试”，2022年5月25日-2022年6月15日开启“漫游测试”，2023年2月10日-2023年3月24日开启“跃迁测试”，2023年4月26日正式开启全平台公测；米哈游官方宣布该游戏在2023年第四季度登陆索尼PS5平台。
+                </div>
+                <div>&emsp;&emsp;游戏中，玩家将登上星穹列车，造访寓居宇宙的万象世界，携手形形色色的旅伴，解救“星核”引发的种种危机，对抗“星神”践踏文明的意图。</div>
+                <br>
+                <a href="https://sr.mihoyo.com/" class="button" target="_blank">Learn More</a>
+            </div>
+
+            <div class="game-card">
+                <img src="./imgs/重返未来：1999_1.jpg" alt="重返未来：1999">
+                <h3>重返未来：1999</h3>
+                <div>&emsp;&emsp;《重返未来：1999》是广州深蓝互动网络科技有限公司开发的策略卡牌类游戏。游戏于2023年5月31日在中国大陆上线。</div>
+                <div>&emsp;&emsp;玩家扮演被圣洛夫基金会收养长大的维尔汀，在这个“旧世”中不断搜寻。在时代轮转中梭巡，和不同时代、国家的神秘学家伙伴们，一起逃离“暴雨”灾厄。</div>
+                <br>
+                <a href="https://re.bluepoch.com/home/" class="button" target="_blank">Learn More</a>
+            </div>
+
+            <div class="game-card">
+                <img src="./imgs/崩坏3_1.png" alt="崩坏3">
+                <h3>崩坏3</h3>
+                <div>
+                    &emsp;&emsp;《崩坏3》是由米哈游科技（上海）有限公司制作发行的一款角色扮演类国产手游，该作于2016年10月14日全平台公测；2020年12月24日，登陆WeGame；2021年11月4日，游戏正式登陆Steam。
+                </div>
+                <div>
+                    &emsp;&emsp;游戏讲述了世界受到神秘灾害“崩坏”侵蚀的故事，玩家可扮演炽翎、白夜执事、第六夜想曲、月下初拥、极地战刃、空之律者、原罪猎人等女武神，去抵抗崩坏的入侵，维护好这个世界的和平。游戏拥有圣痕系统、女武神等战斗培养元素，还引入乱斗竞速、舰团战等PVP玩法。
+                </div>
+                <br>
+                <a href="https://bh3.mihoyo.com/" class="button" target="_blank">Learn More</a>
+            </div>
+
+            <div class="game-card">
+                <img src="./imgs/战双帕弥什_1.jpg" alt="战双帕弥什">
+                <h3>战双帕弥什</h3>
+                <div>&emsp;&emsp;《战双帕弥什》是库洛游戏研发的末世科幻题材的3D动作手游。2019年2月12日首测开启 ；2019年12月5日10:00开启全平台公测。</div>
+                <div>&emsp;&emsp;游戏中玩家将化身为指挥官，带领人类最后的希望——仿生人形“构造体”，共同对抗被“帕弥什”病毒感染的机械大军。</div>
+                <br>
+                <a href="https://pns.kurogame.com/" class="button" target="_blank">Learn More</a>
+            </div>
+        </section>
+        <section class="recent">
+            <h2>最新资讯</h2>
+            <ul>
+                <li><a href="https://ys.mihoyo.com/main/news/detail/27694" target="_blank">《原神》</a></li>
+                <li><a href="https://ht.wanmei.com/news/gamenews/20230607/244147.html" target="_blank">《幻塔》</a></li>
+                <li><a href="https://sr.mihoyo.com/news/111801?nav=news" target="_blank">《崩坏：星穹铁道》</a></li>
+                <li><a href="https://re.bluepoch.com/home/detail.html#newsId?16" target="_blank">《重返未来：1999》</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;异世交集。版权所有。</p>
+    </footer>
+</body>
+
+</html>
