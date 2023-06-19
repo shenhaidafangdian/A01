@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>资讯</title>
+    <style>
+        * {
+	margin: 0;
+	padding: 0;
+  }
+/* 设置页面背景 */
+ body {
+  background-image: url("./img/背景图.jpg");
+  background-size: no-repeat;
+  background-size: cover;
+  animation: animateBackground 60s linear infinite;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+} 
+/* body {
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(#1d2b48, #4f4266);
+  } */
+
+/* 设置h1标题框及字体样式 */
+/* header {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 20px;
+  border-bottom: 2px solid #10c4b5;
+  align-items: center;
+}
+
+header h1 {
+  color: #10c4b5;
+  font-size: 24px;
+  font-weight: bold;
+} */
+
+/* 设置导航样式 */
+/* nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 10px;
+  padding: 0;
+}
+
+nav ul li a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+nav ul li a:hover {
+  color: #10c4b5;
+} */
+
+main {
+	top: 40px;
+  position: relative;
+  margin-top: 0px;
+}
+
+/* 设置intro板块的样式 */
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 40px;
+  border-bottom: 2px solid #10c4b5;
+}
+
+.intro h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+/* button的样式 */
+/* .button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid #10c4b5;
+  color: #10c4b5;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #10c4b5;
+  color: #fff;
+} */
+
+
+/* footer的样式 */
+footer {
+  padding-top: 950px;
+  color: white;
+  font-size: 20px;
+  /* position:relative;
+  bottom: 0;
+  left: 0;
+  width: 100%; */
+}
+
+
+.out {
+  width: 800px;
+  height: 200px;
+  position: relative;
+  margin: 0 auto;
+  top: 100px;
+}
+
+.out .inner {
+  width: 100%;
+  height: 100%;
+}
+
+.out .inner .img {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  transition: 0.3s;
+}
+
+.out .inner .img img {
+  width: 100%;
+  height: 100%;
+}
+
+.out .arrow {
+  font-size: 32px;
+}
+
+.out .arrow i {
+  position: absolute;
+  color: #fff;
+  z-index: 9999;
+  cursor: pointer;
+  top: 84px;
+}
+
+.out .arrow .left {
+  left: 0;
+}
+
+.out .arrow .right {
+  left: 780px;
+}
+/* div{
+	display: block;
+} */
+.out .button {
+  width: 175px;
+  height: 15px;
+  position: absolute;
+  z-index: 9999;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.out .button p {
+  width: 15px;
+  height: 15px;
+  float: left;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: silver;
+}
+
+.out .button p:first-child {
+  background-color: #1486bb;
+}
+
+.out #last {
+  transform: translateX(0);
+  z-index: 9;
+  opacity: 1;
+}
+
+.out #first {
+  transform: translateX(200px) scale(1.3);
+  z-index: 99;
+  opacity: 1;
+}
+
+.out #second {
+  transform: translateX(400px);
+  z-index: 9;
+  opacity: 1;
+}
+
+.out #left {
+  transform: translateX(-100px);
+  z-index: 1;
+  opacity: 0;
+}
+
+.out #right {
+  transform: translateX(500px);
+  z-index: 1;
+  opacity: 0;
+}
+
+/*# sourceMappingURL=./main.css.map */
+
+/* page2 :start*/
+.news {
+	display: flex;
+	position: absolute;
+	height: 910px;
+	width: 100%;
+	background-image: url();
+}
+
+/* 标题 */
+.news h3 {
+	position: relative;
+	font-size: 50px;
+	color: aliceblue;
+	font-weight: 400;
+	text-align: center;
+	margin: 183px auto 60px;
+	height: 66px;
+}
+/* 标题前图 */
+.news h3::before {
+	content: '';
+	position: absolute;
+	top: 28px;
+	left: -354px;
+	background: url("../img/header_decoration.png");
+	height: 14px;
+	width: 385px;
+}
+/* 标题后图 */
+.news h3::after {
+	content: '';
+	position: absolute;
+	top: 36px;
+	left: -255px;
+	background: url("../img/header_decoration.png");
+	height: 14px;
+	width: 385px;
+	transform: translate(calc(100% + 32px), -50%) rotateY(180deg); 		/* 将图片翻转为镜像 */
+}
+
+
+/* 新闻主体 */
+.news_main {
+	display: flex;
+	position: absolute;
+	justify-content: center;
+	top: 110px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 400px;
+}
+
+/* 轮播图 :start*/
+.carousel_map {
+	width: 640px;
+	height: 400px;
+}
+
+.slide {
+	width: inherit;
+	height: inherit;
+	overflow: hidden;
+	position: relative;
+}
+
+/* 鼠标放上去显示按钮 */
+.slide:hover .labels {
+	display: flex;
+}
+
+.slide:hover .list {
+	animation: none;
+}
+
+.slide input {
+	display: none;
+}
+
+/* 按钮位置 */
+.labels {
+	position: absolute;
+	bottom: 0.5em;
+	z-index: 1;
+	width: inherit;
+	justify-content: center;
+	display: none;	/* 鼠标移开隐藏按钮 */
+}
+
+/* 按钮样式 */
+.labels label {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	margin: 0 0.3rem;
+	border: 0.1rem solid #fff;
+	background-color: transparent;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+
+/* 选择哪个按钮就有被点击的效果 */
+input[id=pic1]:checked ~ .labels label[for=pic1],
+input[id=pic2]:checked ~ .labels label[for=pic2],
+input[id=pic3]:checked ~ .labels label[for=pic3],
+input[id=pic4]:checked ~ .labels label[for=pic4] {
+	background-color: #fff;
+	border: 0.1rem solid #fff;
+}
+/* 按钮控件选择图片 */
+input[id=pic1]:checked ~ .list {
+	transform: translate(calc(0 * 640px));
+}
+input[id=pic2]:checked ~ .list {
+	transform: translate(calc(-1 * 640px));
+}	
+input[id=pic3]:checked ~ .list {
+	transform: translate(calc(-2 * 640px));
+}
+input[id=pic4]:checked ~ .list {
+	transform: translate(calc(-3 * 640px));
+}
+
+.list {
+	width: calc(5 * 640px);
+	height: inherit;
+	position: relative;
+	
+	/* 设置动画效果 */
+	animation: move 15s ease 1s infinite;
+}
+/* 动画关键帧轮播 */
+@keyframes move {
+	0% {
+		transform: translate(calc(0 * 640px));
+	}
+	25% {
+		transform: translate(calc(-1 * 640px));
+	}
+	50% {
+		transform: translate(calc(-2 * 640px));
+	}
+	75% {
+		transform: translate(calc(-3 * 640px));
+	}
+	100% {
+		transform: translate(calc(-4 * 640px));
+	}
+}
+
+.item {
+	width: 640px;
+	height: 400px;
+	box-sizing: border-box;
+	float: left;
+}
+
+.item a {
+	padding: 0;
+	opacity: 1;
+}
+/* 轮播图 :end*/
+
+/* 新闻内容 */
+.news_content {
+	width: 640px;
+	height: 400px;
+	background: rgba(17, 17, 17, 0.3);
+}
+
+.news_table_list {
+	display: flex;
+	position: relative;
+	width: 592px;
+	justify-content: flex-start;
+	margin-left: 30px;
+	margin-top: 10px;
+	border-bottom: 3px solid rgba(255,255,255,0.1);
+}
+
+.news_table_list li {
+	color: white;
+	margin: 25px 20px 10px;
+	font-size: 18px;
+	cursor: pointer;
+	position: relative;
+}
+
+
+.news_table_list li:active {
+	color: #ffd49f;
+}
+
+.news_list {
+	height: 260px;
+	width: 592px;
+	margin: 0 24px;
+}
+
+.news_item {
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	height: 50px;
+	width: 100%;
+	padding: 0;
+	opacity: 1;
+	color: white;
+	border-bottom: 2px solid rgba(255,255,255,0.08);
+}
+
+.news_item:hover {
+	background: rgba(80, 80, 80, 0.3);
+}
+
+.news_title {
+	height: 20px;
+	width: 480px;
+	padding-left: 10px;
+}
+
+.news_date {
+	height: 50px;
+	font-size: 14px;
+	line-height: 50px;
+	opacity: 0.5;
+}
+
+
+
+.tab-box {
+    width: 640px;
+	height: 400px;
+	background: rgba(17, 17, 17, 0.37);
+}
+
+.tab-header {
+    display: flex;
+	position: relative;
+	width: 592px;
+	justify-content: flex-start;
+	margin-left: 30px;
+	margin-top: 10px;
+	border-bottom: 3px solid rgba(255,255,255,0.1);
+}
+
+.tab-header-div {
+    float: left;
+    width: 125px;
+    height: 35px;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    border-right: 1px solid white;
+    cursor: pointer;
+}
+.tab-body{
+    height: 260px;
+	width: 592px;
+	margin: 0 24px;
+}
+.tab-body-div {
+    display: flex;
+	align-items: center;
+	font-size: 16px;
+	height: 50px;
+	width: 100%;
+	padding: 0;
+	opacity: 1;
+	color: white;
+	border-bottom: 2px solid rgba(255,255,255,0.08);
+    display: none;
+}
+
+.tab-body-div:last-child {
+    border-right: 0;
+}
+
+.tab-body .current {
+    display: block;
+    margin: 15px 10px;
+}
+
+.tab-header .current {
+    color: black;
+    background: white;
+}
+.tab-body-div-ul-li {
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	height: 50px;
+	width: 100%;
+	padding: 0;
+	opacity: 1;
+	color: white;
+	border-bottom: 2px solid rgba(255,255,255,0.08);
+}
+
+.tab-body-div-ul-li:hover {
+	background: rgba(80, 80, 80, 0.3);
+}
+
+.tab-body-div-ul-li-p1 {
+	height: 20px;
+	width: 480px;
+	padding-left: 10px;
+}
+
+.tab-body-div-ul-li-p2 {
+	height: 50px;
+	font-size: 14px;
+	line-height: 50px;
+	opacity: 0.5;
+}
+.tab-body-div-ul-li-p3{
+	float: right;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid #10c4b5;
+    color: #a5bfbd;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+/* 新闻内容 */
+/* page2 end */
+
+    </style>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+ }
+ img{
+     vertical-align: middle;
+ }
+ li{
+   list-style: none;
+ }
+ a{
+     color: #ccc;
+     text-decoration-line: none;
+ }
+
+.daohanglan{
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    background-color:rgba(0,0,0,.5);
+    z-index: 2;
+    transition: transform 0.5s ease-in-out;
+}
+.daohanglan .huadong{
+    position: absolute;
+    top: 0;
+    left: 346px;
+    width: 40px;
+    height: 5px;
+    background-color: rgb(105, 224, 255) ;    
+}
+
+.daohanglan .zuobian li{
+    float: left;
+}
+
+.daohanglan .zuobian h2 {
+    float: left;
+    display: inline-block;
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    height: 70px;
+    line-height: 75px;
+    margin: 0 30px;
+    color: #42acba;
+}
+
+.daohanglan .zuobian li a{
+    display: inline-block;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 30px;
+    color: #fff;
+    /* text-shadow: 0 0 10px #125f73, 0 0 20px #69e0ff, 0 0 40px #69e0ff; */
+}
+.daohanglan .zuobian li  :hover{
+    color: #69e0ff;
+    border-top: 5px solid #69e0ff;
+}
+
+.daohanglan .youbian li{
+    float: right;
+    height: 70px;
+    line-height: 70px;
+
+}li
+.daohanglan .youbian li span a{
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li i {
+    vertical-align: middle;
+    margin:0 15px;
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li nav{
+    display: inline-block;
+}
+.daohanglan .youbian li nav a{
+    font-size: 17px;
+    color: #ccc;
+}
+.daohanglan .youbian li footer{
+    display: inline-block;
+    font-size: 17px;
+    color: #ccc;
+    margin:0 15px;
+}
+.daohanglan .youbian li a:hover{
+    color: #fff;
+}
+    </style>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector(".daohanglan").style.top = "0";
+  } else {
+    document.querySelector(".daohanglan").style.top = "-70px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+    </script>
+    <script>
+        window.onload = () => {
+  var img = document.querySelectorAll(".img");
+  var left = document.querySelector(".left");
+  var right = document.querySelector(".right");
+  var buttons = document.querySelectorAll(".out .button p");
+
+  //设置一个数组，用来存id
+  idArr = ["first", "second", "right", "left", "left", "left", "last"];
+
+  //设置一个变量用来当图片的索引
+  var index = 0;
+
+  initialize();
+
+  //设置一个定时器，让图片轮播
+  var timer = setInterval(next, 3000);
+
+  //给箭头绑定点击事件
+  left.addEventListener("click", prev);
+  //当鼠标放到箭头上时，让定时器停止
+  left.addEventListener("mouseover", () => {
+    clearInterval(timer);
+    timer = null;
+  });
+  //当鼠标离开箭头时，让定时器重新开始
+  left.addEventListener("mouseout", () => {
+    timer = setInterval(next, 3000);
+  });
+
+  right.addEventListener("click", next);
+  right.addEventListener("mouseover", () => {
+    clearInterval(timer);
+    timer = null;
+  });
+  right.addEventListener("mouseout", () => {
+    timer = setInterval(next, 3000);
+  });
+
+  //给小方块添加点击事件
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("mousedown", () => {
+      //在用户点击的时候关闭定时器
+      clearInterval(timer);
+      timer = null;
+      //这里需要判断用户点击的小方块与当前图片的索引之差，如果
+      //大于0，则表明用户需要更换的是后面的图片，反之，表明用户
+      //需要更换之前也就是前面的图片
+      if (index > i) {
+        let x = index - i;
+        while (x--) {
+          prev();
+        }
+      } else if (index < i) {
+        let x = i - index;
+        while (x--) {
+          next();
+        }
+      }
+    });
+  }
+
+  //创建切换图片的函数
+  function prev() {
+    //切换上一张也就是让数组的最后一个元素变成第一个元素
+    idArr.push(idArr.shift());
+    initialize();
+    if (index === 0) {
+      index = buttons.length - 1;
+    } else {
+      index--;
+    }
+    clearColor();
+  }
+  function next() {
+    //跟上面反过来
+    idArr.unshift(idArr.pop());
+    initialize();
+    if (index === buttons.length - 1) {
+      index = 0;
+    } else {
+      index++;
+    }
+    clearColor();
+  }
+
+  //创建一个函数用来让小方块跟随图片运动
+  function clearColor() {
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].style.backgroundColor = "silver";
+    }
+    //让当前的索引变色
+    buttons[index].style.backgroundColor = "rgb(20, 134, 187)";
+  }
+
+  //创建一个函数用来初始化图片
+  function initialize() {
+    for (let i = 0; i < img.length; i++) {
+      img[i].id = idArr[i];
+    }
+  }
+};
+
+    </script>
+</head>
+<body>
+	
+	<header class="daohanglan">
+		<ul class="zuobian">
+			<h2>异世交集</h2>
+			<li><a href="../首页/首页.html" target="">首&nbsp;页</a></li>
+			<li><a href="../资讯/资讯.html" target="">资&nbsp;讯</a></li>
+			<li><a href="../攻略/攻略.html" target="">攻&nbsp;略</a></li>
+			<li><a href="../视频/视频.html" target="">视&nbsp;频</a></li>
+			<li><a href="../关于我们/关于我们.html" target="">关&nbsp;于&nbsp;我&nbsp;们</a></li>
+		</ul>
+		<ul class="youbian">
+			<li>
+				<span>
+					<a href="../login/login.html" target="">退&nbsp;出</a>
+				</span><i><img src=""
+						alt=""></i>
+					</li>
+		</ul>
+	</header>
+	
+	<main>
+		<section>
+			<div class="out">
+				<div class="inner">
+					<div class="img">
+						<img src="./img/1.png" alt="" />
+					</div>
+					<div class="img">
+						<img src="./img/2.png" alt="" />
+					</div>
+					<div class="img">
+						<img src="./img/3.png" alt="" />
+					</div>
+					<div class="img">
+						<img src="./img/4.png" alt="" />
+					</div>
+					<div class="img">
+						<img src="./img/5.png" alt="" />
+					</div>
+					<div class="img">
+						<img src="./img/6.png" alt="" />
+					</div>
+					<div class="img">
+						<img src="./img/7.png" alt="" />
+					</div>
+				</div>
+				<div class="arrow">
+					<i class="fas fa-chevron-left left"></i>
+					<i class="fas fa-chevron-right right"></i>
+				</div>
+				<div class="button">
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+				</div>
+			</div>
+		</section>
+		<section class="news">
+			<h3>新闻资讯</h3>
+			<!-- 新闻主题 -->
+			<div class="news_main">
+				<!-- 轮播图 -->
+				<div class="carousel_map">
+					<div class="slide">
+						<input type="radio" name="pic" id="pic1" checked />
+						<input type="radio" name="pic" id="pic2" />
+						<input type="radio" name="pic" id="pic3" />
+						<input type="radio" name="pic" id="pic4" />
+
+						<div class="labels">
+							<label for="pic1"></label>
+							<label for="pic2"></label>
+							<label for="pic3"></label>
+							<label for="pic4"></label>
+						</div>
+
+						<ul class="list">
+							<li class="item">
+								<a href="###">
+									<img src="./img/01.jpg" style="height: 100%; width: 100%;" />
+								</a>
+							</li>
+							<li class="item">
+								<a href="###">
+									<img src="./img/02.jpg" style="height: 100%; width: 100%;" />
+								</a>
+							</li>
+							<li class="item">
+								<a href="###">
+									<img src="./img/03.jpg" style="height: 100%; width: 100%;" />
+								</a>
+							</li>
+							<li class="item">
+								<a href="###">
+									<img src="./img/04.jpg" style="height: 100%; width: 100%;" />
+								</a>
+							</li>
+							<li class="item">
+								<a href="###">
+									<img src="./img/05.jpg" style="height: 100%; width: 100%;" />
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- 新闻内容 -->
+				<div class="tab-box">
+					<div class="tab-header">
+						<div class="tab-header-div current">最新</div>
+						<div class="tab-header-div">原神</div>
+						<div class="tab-header-div">崩铁</div>
+						<div class="tab-header-div">幻塔</div>
+					</div>
+					<div class="tab-body">
+						<div class="tab-body-div current">
+							<ul>
+								<li>
+									<a href="https://ys.mihoyo.com/main/news/detail/24924" class="tab-body-div-ul-li" title="凯亚生日快乐｜如果山上风大的话，可以把披风借给你。" target="_blank">
+										<p class="tab-body-div-ul-li-p1" >凯亚生日快乐｜如果山上风大的话，可以把披风借给你。</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://ys.mihoyo.com/main/news/detail/24921" class="tab-body-div-ul-li" title="《原神》新玩法预告PV：「来一局七圣召唤吧！」" target="_blank">
+										<p class="tab-body-div-ul-li-p1">《原神》新玩法预告PV：「来一局七圣召唤吧！」</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://ht.wanmei.com/news/gamenews/20230615/244337.html" class="tab-body-div-ul-li" title="《幻塔》琼楼漫道、劲爆竞技场即将解锁" target="_blank">
+										<p class="tab-body-div-ul-li-p1">《幻塔》琼楼漫道、劲爆竞技场即将解锁</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://sr.mihoyo.com/news/111801?nav=news" class="tab-body-div-ul-li" title="《崩坏：星穹铁道》走近星穹——「银狼：宇宙第一天才骇客！」" target="_blank">
+										<p class="tab-body-div-ul-li-p1">《崩坏：星穹铁道》走近星穹——「银狼：宇宙第一天才骇客！」</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/28</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://pns.kurogame.com/news/410" class="tab-body-div-ul-li" title="《战双帕弥什》官方模拟器常见问题答疑" target="_blank">
+										<p class="tab-body-div-ul-li-p1">《战双帕弥什》官方模拟器常见问题答疑</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/28</p>
+									</a>
+								</li>
+							</ul>
+							<a href="../攻略/攻略.html" title="">
+								<p class="tab-body-div-ul-li-p3">MORE</p>
+							</a>
+						</div>
+						<div class="tab-body-div">
+							<ul>
+								<li>
+									<a href="https://ys.mihoyo.com/main/news/detail/27859" class="tab-body-div-ul-li" title="《原神》「叶落风随」祈愿活动祈愿现已开启" target="_blank">
+										<p class="tab-body-div-ul-li-p1">《原神》「叶落风随」祈愿活动祈愿现已开启</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://ys.mihoyo.com/main/news/detail/27858" class="tab-body-div-ul-li" title="《原神》「敕诫枢谋」祈愿活动祈愿现已开启" target="_blank">
+										<p class="tab-body-div-ul-li-p1">《原神》「敕诫枢谋」祈愿活动祈愿现已开启</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://ys.mihoyo.com/main/news/detail/27957" class="tab-body-div-ul-li" title="《原神》9张OST现已上线腾讯音乐平台" target="_blank">
+										<p class="tab-body-div-ul-li-p1">《原神》9张OST现已上线腾讯音乐平台</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://ys.mihoyo.com/main/news/detail/27953" class="tab-body-div-ul-li" title="《原神》EP-谛思归悟之境" target="_blank">
+										<p class="tab-body-div-ul-li-p1">《原神》EP-谛思归悟之境</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/28</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://ys.mihoyo.com/main/news/detail/27952" class="tab-body-div-ul-li" title="3.7版本超话签到活动第二期" target="_blank">
+										<p class="tab-body-div-ul-li-p1">3.7版本超话签到活动第二期</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/28</p>
+									</a>
+								</li>
+							</ul>
+							<a href="https://ys.mihoyo.com/main/news" title="" target="_blank">
+								<p class="tab-body-div-ul-li-p3">MORE</p>
+							</a>
+						</div>
+						<div class="tab-body-div">
+							<ul>
+								<li>
+									<a href="https://sr.mihoyo.com/news/111801?nav=news" class="tab-body-div-ul-li" title="《崩坏：星穹铁道》走近星穹——「银狼：宇宙第一天才骇客！」" target="_blank">
+										<p class="tab-body-div-ul-li-p1">《崩坏：星穹铁道》走近星穹——「银狼：宇宙第一天才骇客！」</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://sr.mihoyo.com/news/111800?nav=news" class="tab-body-div-ul-li" title="1.1版本「银河漫游」激励计划现已开启" target="_blank">
+										<p class="tab-body-div-ul-li-p1">1.1版本「银河漫游」激励计划现已开启</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://sr.mihoyo.com/news/111794?nav=news" class="tab-body-div-ul-li" title="1.1版本「银河漫游」版本更新概览" target="_blank">
+										<p class="tab-body-div-ul-li-p1">1.1版本「银河漫游」版本更新概览</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://sr.mihoyo.com/news/111774?nav=news" class="tab-body-div-ul-li" title="「猎星游戏」活动：参与获取光锥「新手任务开始前（虚无）」" target="_blank">
+										<p class="tab-body-div-ul-li-p1">「猎星游戏」活动：参与获取光锥「新手任务开始前（虚无）」</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/28</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://sr.mihoyo.com/news/111775?nav=news" class="tab-body-div-ul-li" title="1.1版本全新「同行任务」说明" target="_blank">
+										<p class="tab-body-div-ul-li-p1">1.1版本全新「同行任务」说明</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/28</p>
+									</a>
+								</li>
+							</ul>
+							<a href="https://sr.mihoyo.com/news?nav=news" title="" target="_blank">
+								<p class="tab-body-div-ul-li-p3">MORE</p>
+							</a>
+						</div>
+						<div class="tab-body-div">
+							<ul>
+								<li>
+									<a href="https://ht.wanmei.com/news/gamenews/20230615/244337.html" class="tab-body-div-ul-li" title="《幻塔》琼楼漫道、劲爆竞技场即将解锁" target="_blank">
+										<p class="tab-body-div-ul-li-p1">《幻塔》琼楼漫道、劲爆竞技场即将解锁</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://ht.wanmei.com/news/gamenews/20230608/244216.html" class="tab-body-div-ul-li" title="来幻塔圈分享琼楼盛会见闻，赢限定九域奖励" target="_blank">
+										<p class="tab-body-div-ul-li-p1">来幻塔圈分享琼楼盛会见闻，赢限定九域奖励</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://ht.wanmei.com/news/gamenews/20230607/244147.html" class="tab-body-div-ul-li" title="相逢夏月满 《幻塔》手游3.1版本今日上线！" target="_blank">
+										<p class="tab-body-div-ul-li-p1">相逢夏月满 《幻塔》手游3.1版本今日上线！</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/30</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://ht.wanmei.com/news/gamebroad/20230607/244145.html" class="tab-body-div-ul-li" title="3.1「相逢夏月满」版本更新公告" target="_blank">
+										<p class="tab-body-div-ul-li-p1">3.1「相逢夏月满」版本更新公告</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/28</p>
+									</a>
+								</li>
+								<li>
+									<a href="https://ht.wanmei.com/news/gamenews/20230606/244132.html" class="tab-body-div-ul-li" title="3.1「相逢夏月满」版本速递" target="_blank">
+										<p class="tab-body-div-ul-li-p1">3.1「相逢夏月满」版本速递</p>
+										<p class="tab-body-div-ul-li-p2">2022/11/28</p>
+									</a>
+								</li>
+							</ul>
+							<a href="https://ht.wanmei.com/news/index.html" title="" target="_blank">
+								<p class="tab-body-div-ul-li-p3">MORE</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<p style="background-color: rgba(192, 192, 192, 0);">&copy;异世交集。版权所有。</p>
+	</footer>
+	<script>
+        var tabs = document.getElementsByClassName('tab-header-div');
+        var divs = document.getElementsByClassName('tab-body-div');
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].onmouseover = function () {
+                for (var i = 0; i < divs.length; i++) {
+                    if (tabs[i] == this) {
+                        tabs[i].classList.add('current')
+                        divs[i].classList.add('current')
+                    } else {
+                        tabs[i].classList.remove('current')
+                        divs[i].classList.remove('current')
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
